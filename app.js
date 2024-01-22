@@ -48,7 +48,7 @@ app.get("/todos/", async (request, response) => {
     const { search_q = "", priority, status } = request.query;
 
     switch (true) {
-        case hasPriorityAndStatusProperties(request.query);
+        case hasPriorityAndStatusProperties(request.query):
         getTodosQuery = `
         SELECT * FROM todo
         WHERE todo LIKE '%${search_q}%'
